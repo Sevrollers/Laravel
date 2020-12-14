@@ -27,3 +27,5 @@ Auth::routes();
 
 Route::get('/homeGuest', 'HomeController@index')->name('homeGuest');
 
+Route::post('/confirm-register', 'Auth\RegisterController@create');
+
