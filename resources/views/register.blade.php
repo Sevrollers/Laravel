@@ -27,42 +27,42 @@
             <div class="form-group row">
                 <label for="inputUsername" class="col-sm-4 col-form-label" style="text-align: right">Username:</label>
                 <div class="col-sm-6">
-                    <input type="username" class="form-control" id="inputUsername">
+                    <input type="username" class="form-control" id="inputUsername" name = "name">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="inputEmail" class="col-sm-4 col-form-label" style="text-align: right">E-Mail Address:</label>
                 <div class="col-sm-6">
-                    <input type="email" class="form-control" id="inputEmail">
+                    <input type="email" class="form-control" id="inputEmail" name="email">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-4 col-form-label" style="text-align: right">Password:</label>
                 <div class="col-sm-6">
-                    <input type="password" class="form-control" id="inputPassword">
+                    <input type="password" class="form-control" id="inputPassword" name="password">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-4 col-form-label" style="text-align: right">Confirm Password:</label>
                 <div class="col-sm-6">
-                    <input type="password" class="form-control" id="inputPassword">
+                    <input type="password" class="form-control" id="inputPassword" name="confirm_password">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="inputAdress" class="col-sm-4 col-form-label" style="text-align: right">Address:</label>
                 <div class="col-sm-6">
-                    <input type="address" class="form-control" id="inputAdress">
+                    <input type="text" class="form-control" id="inputAdress" name="address">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="inputPhoneNumber" class="col-sm-4 col-form-label" style="text-align: right">Phone Number:</label>
                 <div class="col-sm-6">
-                    <input type="phonenumber" class="form-control" id="inputPhoneNumber">
+                    <input type="numeric" class="form-control" id="inputPhoneNumber" name="phone_number">
                 </div>
             </div>
 

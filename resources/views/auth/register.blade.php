@@ -21,52 +21,53 @@
         </div>
     </nav>
     <div class="p-4 d-flex-row container mt-5 card border-light mb-3" style="max-width: 60rem;">
-        <form class="px-4 py-3">
+        <form  method="POST" action="{{ route('register') }}" class="px-4 py-3">
+            @csrf
             <div class="card-header bg-danger" style="color: white">Register</div><br>
 
             <div class="form-group row">
                 <label for="inputUsername" class="col-sm-4 col-form-label" style="text-align: right">Username:</label>
                 <div class="col-sm-6">
-                    <input type="username" class="form-control" id="inputUsername">
+                    <input type="username" class="form-control" id="inputUsername" name = "name">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="inputEmail" class="col-sm-4 col-form-label" style="text-align: right">E-Mail Address:</label>
                 <div class="col-sm-6">
-                    <input type="email" class="form-control" id="inputEmail">
+                    <input type="email" class="form-control" id="inputEmail" name="email">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-4 col-form-label" style="text-align: right">Password:</label>
                 <div class="col-sm-6">
-                    <input type="password" class="form-control" id="inputPassword">
+                    <input type="password" class="form-control" id="password" name="password">
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="inputPassword" class="col-sm-4 col-form-label" style="text-align: right">Confirm Password:</label>
+                <label for="inputConfirmPassword" class="col-sm-4 col-form-label" style="text-align: right">Confirm Password:</label>
                 <div class="col-sm-6">
-                    <input type="password" class="form-control" id="inputPassword">
+                    <input type="password" class="form-control" id="password-confirm" name="confirm_password">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="inputAdress" class="col-sm-4 col-form-label" style="text-align: right">Address:</label>
                 <div class="col-sm-6">
-                    <input type="address" class="form-control" id="inputAdress">
+                    <input type="text" class="form-control" id="inputAdress" name="address">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="inputPhoneNumber" class="col-sm-4 col-form-label" style="text-align: right">Phone Number:</label>
                 <div class="col-sm-6">
-                    <input type="phonenumber" class="form-control" id="inputPhoneNumber">
+                    <input type="numeric" class="form-control" id="inputPhoneNumber" name="phone_number">
                 </div>
             </div>
 
-            <label for="inputGender" class="col-form-label">Gender:</label>
+            <label for="inputGender" class="col-form-label" style="text-align: right">Gender:</label>
             <div class="form-check form-check-inline p-4">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Male</label>
@@ -77,7 +78,9 @@
             </div>
             <br><br>
 
-            <a class="btn btn-primary" href="{{ url ('/') }}" role="button">Register</a>
+            <button type="submit" class="btn btn-primary">
+                {{ __('Register') }}
+            </button>
             <a href="#">Forgot Your password?</a>
           </form>
     </div>
