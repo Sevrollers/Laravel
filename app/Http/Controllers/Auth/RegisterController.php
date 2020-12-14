@@ -42,15 +42,19 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function createUserForm(Request $request) {
+        return view('form');
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array  $request
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    protected function validator(Request $request)
     {
-        return Validator::make($data, [
+        RegisterController::validate($request, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
@@ -59,6 +63,9 @@ class RegisterController extends Controller
             'phone_number' => ['required', 'numeric'],
             'gender' => ['required']
         ]);
+        RegisterController::create($request->all());
+
+        return back()->with('success', 'Your form has been submitted.');
     }
 
     /**
@@ -69,14 +76,21 @@ class RegisterController extends Controller
      */
     protected function create(Request $request)
     {
-        return User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'confirm_password' => Hash::make($request->confirm_password),
-            'address' => $request->address,
-            'phone_number' => $request->phone_number,
-            'gender' => $request->gender
-        ]);
+        $user = User::where('email', $request->email)->first();
+        if ($user) {
+            return back()->with('errors', 'Email already registered');
+        }else{
+            User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'confirm_password' => Hash::make($request->confirm_password),
+                'address' => $request->address,
+                'phone_number' => $request->phone_number,
+                'gender' => $request->gender
+            ]);
+
+            return back()->with('success', 'Your form has been submitted.');
+        }
     }
 }
