@@ -21,7 +21,7 @@ class PagesController extends Controller
     {
         return view('register');
     }
-    public function home()
+    public static function home()
     {
         return view('homeGuest');
     }

@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@home');
 Route::get('/register', 'PagesController@register');
+Route::get('/login', 'PagesController@login');
 Route::get('/homeGuest', 'PagesController@homeGuest');
 
 Auth::routes();
@@ -28,4 +29,6 @@ Auth::routes();
 Route::get('/homeGuest', 'HomeController@index')->name('homeGuest');
 
 Route::post('/confirm-register', 'Auth\RegisterController@create');
+Route::post('/log', 'Auth\LoginController@login');
+Route::get('/logout', 'Auth\LoginController@logout');
 
