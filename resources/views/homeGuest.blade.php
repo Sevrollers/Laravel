@@ -15,8 +15,13 @@
         <div class="container">
           <a style="color: white" class="navbar-brand" href="#">PHizza Hut</a>
           <nav>
-          <a style="color: white" class="navbar-brand" href="{{ url ('/') }}">Login</a>
-            <a style="color: white" class="navbar-brand" href="{{ route('register') }}">Register</a>
+            @if(Cookie::get('email')!=null)
+              <a style="color: white" class="navbar-brand" href="{{ url ('/') }}">{{Cookie::get('name')}}</a>
+              <a style="color: white" class="navbar-brand" href="{{ route('logout') }}">Logout</a>
+            @else
+              <a style="color: white" class="navbar-brand" href="{{ url ('/login') }}">Login</a>
+              <a style="color: white" class="navbar-brand" href="{{ route('register') }}">Register</a>
+            @endif
           </nav>
         </div>
     </nav>
