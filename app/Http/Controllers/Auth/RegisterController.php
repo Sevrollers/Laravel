@@ -52,21 +52,21 @@ class RegisterController extends Controller
      * @param  array  $request
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(Request $request)
-    {
-        RegisterController::validate($request, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'confirm_password' => ['required', 'string', 'min:6', 'confirmed'],
-            'address' => ['required', 'string', 'max:255'],
-            'phone_number' => ['required', 'numeric'],
-            'gender' => ['required']
-        ]);
-        RegisterController::create($request->all());
+    // protected function validator(Request $request)
+    // {
+    //     RegisterController::validate($request, [
+    //         'name' => ['required', 'string', 'max:255'],
+    //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+    //         'password' => ['required', 'string', 'min:6', 'confirmed'],
+    //         'confirm_password' => ['required', 'string', 'min:6', 'confirmed'],
+    //         'address' => ['required', 'string', 'max:255'],
+    //         'phone_number' => ['required', 'numeric'],
+    //         'gender' => ['required']
+    //     ]);
+    //     RegisterController::create($request->all());
 
-        return back()->with('success', 'Your form has been submitted.');
-    }
+    //     return back()->with('success', 'Your form has been submitted.');
+    // }
 
     /**
      * Create a new user instance after a valid registration.

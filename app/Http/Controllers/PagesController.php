@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Pizza;
 
 class PagesController extends Controller
 {
@@ -24,5 +24,9 @@ class PagesController extends Controller
     public function home()
     {
         return view('homeGuest');
+    }
+    public function detail()
+    {
+        return view('detail');
     }
 }

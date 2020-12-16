@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PagesController@home');
 Route::get('/register', 'PagesController@register');
 Route::get('/homeGuest', 'PagesController@homeGuest');
+Route::get('/detail', 'PagesController@detail');
 
 Auth::routes();
 

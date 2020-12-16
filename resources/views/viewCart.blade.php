@@ -20,31 +20,28 @@
           </nav>
         </div>
     </nav>
-    <div class="p-4 d-flex-row container mt-5 card border-light mb-3" style="max-width: 60rem;">
-        <form class="px-4 py-3">
-            <div class="card-header bg-danger" style="color: white">Login</div><br>
-            <div class="form-group row">
-                <label for="inputEmail" class="col-sm-4 col-form-label" style="text-align: right">E-Mail Address</label>
-                <div class="col-sm-6">
-                  <input type="email" class="form-control" id="inputEmail">
-                </div>
 
-            </div>
-            <div class="form-group row">
-                <label for="inputPassword" class="col-sm-4 col-form-label" style="text-align: right">Password</label>
-                <div class="col-sm-6">
-                  <input type="password" class="form-control" id="inputPassword">
+        @foreach ($pizza as $value)
+        <div class="card-deck">
+            <div class="card">
+                <img src="{{assets("$value->photo")}}" class="card-img-top" alt="">
+                <div class="card-body">
+                <h5 class="card-title" style="text-align: center">{{ $value->name }}</h5>
+                <p class="card-text"><small class="text-muted">Rp. {{ $value->price }}</small></p>
+                <p class="card-text"><small class="text-muted">Quantity: {{ $value->Quantity }}</small></p>
+                <div class="form-group row">
+                    <label for="inputQuantity" class="col-sm-4 col-form-label" style="text-align: center">Quantity:</label>
+                    <div class="col-sm-6">
+                        <input type="numeric" class="form-control" id="inputQuantity" name = "Quantity">
+                    </div>
+                </div>
                 </div>
             </div>
-
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-            </div>
-            <a class="btn btn-primary" href="{{ url ('/homeGuest') }}" role="button">Login</a>
-            <a href="#">Forgot Your password?</a>
-          </form>
+        </div>
+        @endforeach
+        </form>
     </div>
+
 
     @yield('container')
 
