@@ -41,7 +41,7 @@
         @foreach ($pizza as $value)
         <div class="card-deck">
             <div class="card">
-                <img src="{{assets("$value->photo")}}" class="card-img-top" alt="">
+                <img src="{{ asset("image/$value->photo") }}" class="card-img-top" alt="">
                 <div class="card-body">
                 <h5 class="card-title">{{ $value->name }}</h5>
                 <p class="card-text"><small class="text-muted">{{ $value->price }}</small></p>

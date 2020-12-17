@@ -15,9 +15,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pizza = DB::table('pizza')->paginate(6);
+        $pizza = DB::table('pizza')->get();
         return view('homeGuest')->with('pizza',$pizza);
     }
+
     public function search(Request $request)
     {
         $pizza_name = $request->name;

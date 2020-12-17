@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'PagesController@home');
+Route::get('/', 'HomeController@index');
 Route::get('/register', 'PagesController@register');
 Route::get('/login', 'PagesController@login');
 Route::get('/homeGuest', 'PagesController@homeGuest');
