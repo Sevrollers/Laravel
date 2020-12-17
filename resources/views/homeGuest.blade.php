@@ -16,11 +16,14 @@
           <a style="color: white" class="navbar-brand" href="#">PHizza Hut</a>
           <nav>
             @if(Cookie::get('email')!=null)
-              <a style="color: white" class="navbar-brand" href="{{ url ('/') }}">{{Cookie::get('name')}}</a>
-              <a style="color: white" class="navbar-brand" href="{{ route('logout') }}">Logout</a>
+                <a style="color: white" class="navbar-brand" href="{{ url ('#') }}">View Transaction History</a>
+                <a style="color: white" class="navbar-brand" href="{{ url ('/viewCart') }}">View Cart</a>
+                <a style="color: white" class="navbar-brand" href="{{ url ('/') }}">{{Cookie::get('name')}}</a>
+                <a style="color: white" class="navbar-brand" href="{{ route('logout') }}">Logout</a>
+            @elseif()
             @else
-              <a style="color: white" class="navbar-brand" href="{{ url ('/login') }}">Login</a>
-              <a style="color: white" class="navbar-brand" href="{{ route('register') }}">Register</a>
+                <a style="color: white" class="navbar-brand" href="{{ url ('/login') }}">Login</a>
+                <a style="color: white" class="navbar-brand" href="{{ route('register') }}">Register</a>
             @endif
           </nav>
         </div>
